@@ -1,0 +1,19 @@
+{
+  "name": "mini-cdn-simulation",
+  "version": "1.0.0",
+  "description": "Mini CDN Simulation for Computer Networks course",
+  "main": "cdn-controller.js",
+  "scripts": {
+    "start:asia": "node edge-servers/asia-server.js",
+    "start:europe": "node edge-servers/europe-server.js",
+    "start:us": "node edge-servers/us-server.js",
+    "start:controller": "node cdn-controller.js",
+    "start:all": "concurrently \"npm run start:asia\" \"npm run start:europe\" \"npm run start:us\" \"npm run start:controller\"",
+    "client": "node client.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "axios": "^1.6.2",
+    "concurrently": "^8.2.2"
+  }
+}
